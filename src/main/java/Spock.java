@@ -1,2 +1,2 @@
-public class Spock {
+public class Spock extends Element {
 }

@@ -1,2 +1,2 @@
-public class Paper {
+public class Paper extends Element {
 }

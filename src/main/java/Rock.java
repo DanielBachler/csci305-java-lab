@@ -1,2 +1,2 @@
-public class Rock {
+public class Rock extends Element {
 }

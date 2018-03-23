@@ -1,2 +1,2 @@
-public class Lizard {
+public class Lizard extends Element {
 }

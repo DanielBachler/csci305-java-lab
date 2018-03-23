@@ -1,2 +1,2 @@
-public class Scissors {
+public class Scissors extends Element {
 }
