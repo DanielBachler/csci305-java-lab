@@ -17,13 +17,13 @@ Table of Contents
       * [Implementation](#implementation)
         * [Element Class](#element-class)
         * [Self-Check](#self-check)
-        * [Player Class](#player-class)
+        * [csci305.javalab.Player Class](#player-class)
         * [Stupid Bot](#stupid-bot)
         * [Random Bot](#random-bot)
         * [Iterative Bot](#iterative-bot)
         * [LastPlay Bot](#lastplay-bot)
-        * [Human Player](#human-player)
-           * [Sample output of a move from the Human Player](#sample-output-of-a-move-from-the-human-player)
+        * [csci305.javalab.Human csci305.javalab.Player](#human-player)
+           * [Sample output of a move from the csci305.javalab.Human csci305.javalab.Player](#sample-output-of-a-move-from-the-human-player)
         * [My Bot](#my-bot)
         * [Self Check](#self-check-1)
         * [Main Class](#main-class)
@@ -148,26 +148,26 @@ Should yield the following output:
   Rock equals rock -- Tie
 ```
 
-## Player Class
+## csci305.javalab.Player Class
 
-Next you will create a series of classes for the Players. Begin with a superclass named `Player`. This class has one instance variable `name`. Create a getter method called `getName()` that returns the variable `name`, which is set via the constructor. Also, create a abstract method `play()`. Now you are ready to create the concrete Player classes.
+Next you will create a series of classes for the Players. Begin with a superclass named `csci305.javalab.Player`. This class has one instance variable `name`. Create a getter method called `getName()` that returns the variable `name`, which is set via the constructor. Also, create a abstract method `play()`. Now you are ready to create the concrete csci305.javalab.Player classes.
 
 ## Stupid Bot
-Begin with a class named `StupidBot`. For this class, define the `play()` method to return the same move every time (e.g., `Rock, Paper`, etc.). Just pick a single move of your choice and have your `StupidBot` play this move each and every time.
+Begin with a class named `csci305.javalab.StupidBot`. For this class, define the `play()` method to return the same move every time (e.g., `Rock, Paper`, etc.). Just pick a single move of your choice and have your `csci305.javalab.StupidBot` play this move each and every time.
 
 ## Random Bot
-Next, create the class `RandomBot`. This Player will randomly pick and return one of the five possible moves from your `moves` list.
+Next, create the class `csci305.javalab.RandomBot`. This csci305.javalab.Player will randomly pick and return one of the five possible moves from your `moves` list.
 
 ## Iterative Bot
-Your next, Player, `IterativeBot`, begins with one move and cycles through all the moves, one by one, repeating the sequence only after having played all five moves.
+Your next, csci305.javalab.Player, `csci305.javalab.IterativeBot`, begins with one move and cycles through all the moves, one by one, repeating the sequence only after having played all five moves.
 
 ## LastPlay Bot
-Player `LastPlayBot` will always play the move that the opponent played on the previous move. You may implement this feature however you choose, but you will explain in your Lab Report. For this Player's first move, you may arbitrarily pick any move.
+csci305.javalab.Player `csci305.javalab.LastPlayBot` will always play the move that the opponent played on the previous move. You may implement this feature however you choose, but you will explain in your Lab Report. For this csci305.javalab.Player's first move, you may arbitrarily pick any move.
 
-## Human Player
-Next, you will define a `Human` class. This Player will ask the user to determine the move. For each turn, the `play()` method will print the options and request input from the user, as in Figure 1. Be sure to only accept valid moves from the user.
+## csci305.javalab.Human csci305.javalab.Player
+Next, you will define a `csci305.javalab.Human` class. This csci305.javalab.Player will ask the user to determine the move. For each turn, the `play()` method will print the options and request input from the user, as in Figure 1. Be sure to only accept valid moves from the user.
 
-### Sample output of a move from the `Human` Player
+### Sample output of a move from the `csci305.javalab.Human` csci305.javalab.Player
 ```
   (1) : Rock
   (2) : Paper
@@ -180,19 +180,19 @@ Next, you will define a `Human` class. This Player will ask the user to determin
 ```
 
 ## My Bot
-Lastly, define a class `MyBot`. This Player can employ any strategy you determine that **differs** from the other Players described above. You will describe your strategy in your Lab Report.
+Lastly, define a class `csci305.javalab.MyBot`. This csci305.javalab.Player can employ any strategy you determine that **differs** from the other Players described above. You will describe your strategy in your Lab Report.
 
 
 ## Self Check
 
-You can now test your Player classes. For example, the code:
+You can now test your csci305.javalab.Player classes. For example, the code:
 
 ```java
 public class TestPlayers {
 
     public static void main(String args[]) {
-      Player p1 = new StudpidBot("StupidBot");
-      Player p2 = new RandomBot("RandomBot");
+      csci305.javalab.Player p1 = new StudpidBot("csci305.javalab.StupidBot");
+      csci305.javalab.Player p2 = new csci305.javalab.RandomBot("csci305.javalab.RandomBot");
       Element p1move = p1.play()
       Element p2move = p2.play()
       System.out.println(p1move.compareTo(p2move));
@@ -210,17 +210,17 @@ might yield the following output:
 
 You will define a main class that will simulate a game of Rock-Paper-Scissors-Lizard-Spock. Your game will play five rounds between two players, determining the winner (or a draw) at the conclusion of the game. A sample output is shown in Figure 2.
 
-Begin with a welcome message that also displays your name. Next have the user select `Player1` and `Player2` from a list. Again ensure that the user can only make valid selections of one of your six Players. Since all the Players implement the `play` method, the actual Player class instantiated will not be determined until runtime.
+Begin with a welcome message that also displays your name. Next have the user select `Player1` and `Player2` from a list. Again ensure that the user can only make valid selections of one of your six Players. Since all the Players implement the `play` method, the actual csci305.javalab.Player class instantiated will not be determined until runtime.
 
 Now, using a loop structure, play five rounds of Rock-Paper-Scissors-Lizard-Spock. For each player, print out the move selected. Also, print out the result description (e.g., Rock crushes Scissors) and determine the round winner. Your output should resemble the example output in Figure 2. You should be keeping score so that you can determine the game winner after the five rounds. Print out the game winner.
 
 # Lab Questions (50 Points)
 
-1. Describe your Player `LastPlayBot`. How did you implement this strategy? (5 points)
-2. Describe your Player `MyBot`, explaining the strategy you employed and how you accomplished it. (5 points)
+1. Describe your csci305.javalab.Player `csci305.javalab.LastPlayBot`. How did you implement this strategy? (5 points)
+2. Describe your csci305.javalab.Player `csci305.javalab.MyBot`, explaining the strategy you employed and how you accomplished it. (5 points)
 3. Using the course notes and any web resources of your choosing, explain the type system of Java, giving attention to the concepts of binding time, dynamic vs. static typing, strong vs. weak typing, and user-defined types (classes). Cite any sources you used other than class discussion or the textbook. (15 points)
-4. Play a number of games, selecting your various players. Do you notice any trends? Are you, as the Human Player, able to beat any of the Bots on a consistent basis? (5 points)
-5. Read the wikipedia entry on [Normal Form Games](http://en.wikipedia.org/wiki/Normal-form_game). Also, review the Wikipedia page on [Rock-paper-scissors-lizard-Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock). Is it possible to design a Player strategy that is more likely to succeed? Why or why not? Explain in a paragraph. It is possible to answer this question even if you did not finish the Lab. (10 points)
+4. Play a number of games, selecting your various players. Do you notice any trends? Are you, as the csci305.javalab.Human csci305.javalab.Player, able to beat any of the Bots on a consistent basis? (5 points)
+5. Read the wikipedia entry on [Normal Form Games](http://en.wikipedia.org/wiki/Normal-form_game). Also, review the Wikipedia page on [Rock-paper-scissors-lizard-Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock). Is it possible to design a csci305.javalab.Player strategy that is more likely to succeed? Why or why not? Explain in a paragraph. It is possible to answer this question even if you did not finish the Lab. (10 points)
 
 The following questions are for feedback and evaluation purposes. Points are awarded for any sincere answer. (1 point per question)
 
@@ -242,45 +242,45 @@ Finally, 5 points will be given upon evaluation of your code for the following:
   Welcome to Rock, Paper, Scissors, Lizard, Spock, implemented by <Your Name Here>.
 
   Please choose two players:
-     (1) Human
-     (2) StupidBot
-     (3) RandomBot
-     (4) IterativeBot
-     (5) LastPlayBot
-     (6) MyBot
+     (1) csci305.javalab.Human
+     (2) csci305.javalab.StupidBot
+     (3) csci305.javalab.RandomBot
+     (4) csci305.javalab.IterativeBot
+     (5) csci305.javalab.LastPlayBot
+     (6) csci305.javalab.MyBot
 
   Select player 1: 2
   Select player 2: 3
 
-  StupidBot vs RandomBot. Go!
+  csci305.javalab.StupidBot vs csci305.javalab.RandomBot. Go!
 
   Round 1:
-    Player 1 chose Scissors
-    Player 2 chose Rock
+    csci305.javalab.Player 1 chose Scissors
+    csci305.javalab.Player 2 chose Rock
     Rock crushes Scissors
-    Player 2 won the round
+    csci305.javalab.Player 2 won the round
 
   Round 2:
-    Player 1 chose Scissors
-    Player 2 chose Spock
+    csci305.javalab.Player 1 chose Scissors
+    csci305.javalab.Player 2 chose Spock
     Spock smashes Scissors
-    Player 2 won the round
+    csci305.javalab.Player 2 won the round
 
   Round 3:
-    Player 1 chose Scissors
-    Player 2 chose Paper
+    csci305.javalab.Player 1 chose Scissors
+    csci305.javalab.Player 2 chose Paper
     Scissors cut Paper
-    Player 1 won the round
+    csci305.javalab.Player 1 won the round
 
   Round 4:
-    Player 1 chose Scissors
-    Player 2 chose Lizard
+    csci305.javalab.Player 1 chose Scissors
+    csci305.javalab.Player 2 chose Lizard
     Scissors decapitate Lizard
-    Player 1 won the round
+    csci305.javalab.Player 1 won the round
 
   Round 5:
-    Player 1 chose Scissors
-    Player 2 chose Scissors
+    csci305.javalab.Player 1 chose Scissors
+    csci305.javalab.Player 2 chose Scissors
     Scissors equals Scissors
     Round was a tie
 
