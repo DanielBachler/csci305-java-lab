@@ -66,17 +66,22 @@ public class Main {
         for(int i = 1; i < 6; i++) {
             //Prints the round number
             System.out.printf("\nRound %d:\n", i);
-            //Gets the moves of both players
+            //Gets the move for player 1
             Element moveOne = playerOne.play();
-            Element moveTwo = playerTwo.play();
 
-            //Logic for last play bot
-            if(playerOne.getName().equals("csci305.javalab.LastPlayBot")) {
-                playerOne.setLastPlay(moveTwo);
-            }
-            if(playerTwo.getName().equals("csci305.javalab.LastPlayBot")) {
+            //Logic for last play bot and for myBot, needs to be right after move one selection for myBot to work properly
+            if(playerTwo.getName().equals("csci305.javalab.LastPlayBot") || playerTwo.getName().equals("csci305.javalab.MyBot")) {
                 playerTwo.setLastPlay(moveOne);
             }
+
+            //Gets move for player 2
+            Element moveTwo = playerTwo.play();
+
+            //Logic for last play bot and for myBot
+            if(playerOne.getName().equals("csci305.javalab.LastPlayBot") || playerOne.getName().equals("csci305.javalab.MyBot")) {
+                playerOne.setLastPlay(moveTwo);
+            }
+
 
             //Prints the chosen moves
             System.out.println("Player 1 chose: " + moveOne.getName());
