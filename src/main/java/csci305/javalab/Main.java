@@ -1,11 +1,9 @@
 package csci305.javalab;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 import java.util.HashMap;
 import java.util.Scanner;
 
-//TODO: redo mybot, comment, and clean, finish main method (figure out how to cut compareTo message down and track wins)
+//TODO: redo mybot, comment, and clean, also bug test.
 public class Main {
     //Creating the final elements and putting them into a map, which cannot be modified after creation
     //This will be used throughout the program instead of creating new Elements.
@@ -16,6 +14,9 @@ public class Main {
         put("Lizard", new Lizard("Lizard"));
         put("Spock", new Spock("Spock"));
     }};
+
+    //Scanner for human input
+    static Scanner playerInput = new Scanner(System.in);
 
     //Driver method, used to execute the entire program.
     public static void main(String[] args) {
@@ -32,8 +33,6 @@ public class Main {
         //Setting up players
         Player playerOne;
         Player playerTwo;
-        //Making the scanner for input
-        Scanner playerInput = new Scanner(System.in);
         //Ints for both player numbers
         int playerOneNum;
         int playerTwoNum;
@@ -57,12 +56,16 @@ public class Main {
         playerOne = getPlayer(playerOneNum);
         playerTwo = getPlayer(playerTwoNum);
 
+        //Sets up win counters
+        int playerOneWins = 0;
+        int playerTwoWins = 0;
+
         //Prints fight message
         System.out.println(playerOne.getName() + " VS " + playerTwo.getName() + ". GO!");
         //Plays the 5 rounds, and calculates winner
         for(int i = 1; i < 6; i++) {
             //Prints the round number
-            System.out.printf("Round %d:", i);
+            System.out.printf("\nRound %d:\n", i);
             //Gets the moves of both players
             Element moveOne = playerOne.play();
             Element moveTwo = playerTwo.play();
@@ -79,8 +82,38 @@ public class Main {
             System.out.println("Player 1 chose: " + moveOne.getName());
             System.out.println("Player 2 chose: " + moveTwo.getName());
 
+            //Gets the result
+            String result = moveOne.compareTo(moveTwo);
+            //Gets the spot to cut string
+            int cutSpot = result.indexOf('-')-1;
+            //The needed string
+            String trueResult = result.substring(0,cutSpot);
+            System.out.println(trueResult);
 
+            //Gets the winner
+            String condition = result.substring(cutSpot+3);
+            if(condition.contains("Win")) {
+                System.out.println("csci305.javalab.Player 1 won the round");
+                playerOneWins++;
+            } else if(condition.contains("Lose")){
+                System.out.println("csci305.javalab.Player 2 won the round");
+                playerTwoWins++;
+            } else {
+                System.out.println("Round was a tie");
+            }
         }
+        //Prints score and winner
+        System.out.printf("\nThe score was %d to %d\n", playerOneWins, playerTwoWins);
+        //If player 1 has more points, declares them winner, else if player 2 has more points declares them the winner
+        //Finally only other option is a tie so prints that.
+        if(playerOneWins > playerTwoWins) {
+            System.out.println("Player 1 wins!");
+        } else if(playerOneWins < playerTwoWins) {
+            System.out.println("Player 2 wins!");
+        } else {
+            System.out.println("Game was a draw");
+        }
+        playerInput.close();
     }
 
     //A method used for testing the initial outcome class
