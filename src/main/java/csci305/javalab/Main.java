@@ -73,18 +73,14 @@ public class Main {
             //Gets the move for player 1
             Element moveOne = playerOne.play();
 
-            //Logic for last play bot and for myBot, needs to be right after move one selection for myBot to work properly
-            if(playerTwo.getName().equals("csci305.javalab.LastPlayBot") || playerTwo.getName().equals("csci305.javalab.MyBot")) {
-                playerTwo.setLastPlay(moveOne);
-            }
+            //Since default method does nothing, passing to classes that do not use it is not important
+            playerTwo.setLastPlay(moveOne);
 
             //Gets move for player 2
             Element moveTwo = playerTwo.play();
 
-            //Logic for last play bot and for myBot
-            if(playerOne.getName().equals("csci305.javalab.LastPlayBot") || playerOne.getName().equals("csci305.javalab.MyBot")) {
-                playerOne.setLastPlay(moveTwo);
-            }
+            //Since default method does nothing, passing to classes that do not use it is not important
+            playerOne.setLastPlay(moveTwo);
 
 
             //Prints the chosen moves
