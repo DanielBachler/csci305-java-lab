@@ -23,11 +23,19 @@ public class MyBot extends Player{
         int key;
         //Only needed as a seg-way for loop, hence name
         boolean temp;
+        //Counter to avoid infinite loop
+        int counter = 0;
         do {
+            //Gets a random key 0-4
             key = rand.nextInt(5);
             //Get whether or not the chosen element has been played
             temp = plays.get(Player.keyGetter(key));
-        } while(!temp);
+            counter++;
+            //If stuck in an infinite loop, returns lizard, since being in an infinite loop means no choices are left
+            if(counter > 10000) {
+                return Main.finalMap.get("Lizard");
+            }
+        } while(temp);
         //Returns the first found element that opponent has not played
         return Main.finalMap.get(Player.keyGetter(key));
     }

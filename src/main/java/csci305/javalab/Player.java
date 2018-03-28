@@ -54,6 +54,6 @@ public abstract class Player {
         return key;
     }
 
-    //For use with the lastPlay Bot
+    //For use with the lastPlay Bot and myBot
     public void setLastPlay(Element lastPlay) {}
 }

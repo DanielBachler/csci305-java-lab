@@ -1,6 +1,8 @@
 package csci305.javalab;
 
+//Class for helping with outcomes, since 2 strings are needed
 public class Outcome {
+    //Setting up the 2 strings
     String stringOne;
     String stringTwo;
 

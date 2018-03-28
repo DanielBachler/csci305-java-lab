@@ -3,7 +3,7 @@ package csci305.javalab;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//TODO: redo mybot, comment, and clean, also bug test.
+//TODO: clean, bug test.
 public class Main {
     //Creating the final elements and putting them into a map, which cannot be modified after creation
     //This will be used throughout the program instead of creating new Elements.
@@ -39,7 +39,9 @@ public class Main {
         //Logic to make sure the num picked for player 1 is correct.
         do {
             System.out.print("Select player 1: ");
+            //Gets input from user
             playerOneNum = playerInput.nextInt();
+            //Error checks input, prints message if check fails
             if(playerOneNum < 1 || playerOneNum > 6) {
                 System.out.println("Please pick a valid number");
             }
@@ -47,7 +49,9 @@ public class Main {
         //Logic to make sure the num picked for player 2 is correct.
         do {
             System.out.print("Select player 2: ");
+            //Gets user input
             playerTwoNum = playerInput.nextInt();
+            //Error check, prints message if check fails
             if(playerTwoNum < 1 || playerTwoNum > 6) {
                 System.out.println("Please pick a valid number");
             }
