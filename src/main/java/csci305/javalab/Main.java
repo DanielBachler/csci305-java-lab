@@ -3,7 +3,6 @@ package csci305.javalab;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//TODO: bug test.
 public class Main {
     //Creating the final elements and putting them into a map, which cannot be modified after creation
     //This will be used throughout the program instead of creating new Elements.
@@ -74,13 +73,22 @@ public class Main {
             Element moveOne = playerOne.play();
 
             //Since default method does nothing, passing to classes that do not use it is not important
-            playerTwo.setLastPlay(moveOne);
+            //With the exception of last play bot, if this executes it will always draw so it is called after
+            if(!playerTwo.getName().equals("csci305.javalab.LastPlayBot")) {
+                playerTwo.setLastPlay(moveOne);
+            }
+
 
             //Gets move for player 2
             Element moveTwo = playerTwo.play();
 
             //Since default method does nothing, passing to classes that do not use it is not important
             playerOne.setLastPlay(moveTwo);
+
+            //Last play bot only call
+            if(playerTwo.getName().equals("csci305.javalab.LastPlayBot")) {
+                playerTwo.setLastPlay(moveOne);
+            }
 
 
             //Prints the chosen moves

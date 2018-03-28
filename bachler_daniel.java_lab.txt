@@ -8,7 +8,10 @@ a move is played the boolean is changed from false to true, meaning it can no lo
 that has not been played by the opponent then returns it.  To avoid an infinite loop in the rare case that the opponent plays all 5 moves and went first, after 100,000 loops
 the bot returns Lizard by default, which does not take too much time to reach in the case of it being needed.
 
-3.
+3. In Java, explicit typing is used, as all variables must be given a type upon declaration.  For the most part it utilizes static typing, seeing that again, all variables must be given a type by the programmer.
+Some dynamic typing is present, as some types can be swapped without explicit casts, but it is not the norm.  Java also uses strong typing vs weak, forcing you to use correct types for functions and operations, otherwise
+it will throw a compiler error.  Java also contains both primitive types and constructed types, with user created classes being treated as constructed types in the mindset of type types.  Java binds variables at compile time
+seeing as their types are user defined well before then.
 
 4. Beating the stupidBot, iterativeBot, and myBot is fairly easy.  StupidBot always plays Lizard so simply choosing something that beats Lizard is sufficient.  IterativeBot
 is also easy enough to beat since it loops over the moves in order, and I know the order so beating it is simply picking the right move at the right time. MyBot can
