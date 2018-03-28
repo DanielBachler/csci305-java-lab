@@ -3,7 +3,7 @@ package csci305.javalab;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//TODO: clean, bug test.
+//TODO: bug test.
 public class Main {
     //Creating the final elements and putting them into a map, which cannot be modified after creation
     //This will be used throughout the program instead of creating new Elements.

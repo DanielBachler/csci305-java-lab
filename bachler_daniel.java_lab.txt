@@ -1,0 +1,35 @@
+Lab Questions
+1. To implement the lastPlayBot, I created a field in the class that would hold the last move played by the opponent.  The player class has a blank non-abstract method
+that by default does nothing, but is overridden by this method to store the last played move.  If there is no stored last play, the class created a temporary RandomBot
+and plays a random move.
+
+2. MyBot's strategy is it will only play a move the opponent has not played yet.  To accomplish this it uses a HashMap with a list of moves paired with a boolean.  Once
+a move is played the boolean is changed from false to true, meaning it can no longer be selected.  The bot loops picking random numbers in the range 0-4 until it finds a move
+that has not been played by the opponent then returns it.  To avoid an infinite loop in the rare case that the opponent plays all 5 moves and went first, after 100,000 loops
+the bot returns Lizard by default, which does not take too much time to reach in the case of it being needed.
+
+3.
+
+4. Beating the stupidBot, iterativeBot, and myBot is fairly easy.  StupidBot always plays Lizard so simply choosing something that beats Lizard is sufficient.  IterativeBot
+is also easy enough to beat since it loops over the moves in order, and I know the order so beating it is simply picking the right move at the right time. MyBot can
+be beat fairly consistently by picking 2 moves so that it cannot use them, and then picking the move that those moves would beat. For example, if you pick Lizard and Scissors
+you can play Paper 3 times, and the bot cannot beat you since only Lizard and Scissors beat paper.  Using this strategy you can always win if you play first.
+
+5. I think that it would be possible, if you sat down and made the payoff matrix.  You could calculate the most probable way to win in multiple rounds.  In one round,
+all choices are equal, 2 ways to win and 2 ways to lose with 1 way to tie.  But as you play more rounds you can find a pattern that is more likely to win over pure randomness
+or other basic strategies. You may not be able to increase your chances by a lot, but you should be able to make them better than the 50-50 it seems like.
+
+
+Feedback
+1. I have been using Java for over 4 years, so its nice to be able to use a language I am very familiar with, the large amount of libraries for almost anything
+I want to do is also fantastic.
+
+2. Sometimes finding the cause of a bug in Java can be painful, as you have to jump through many classes and their methods to resolve it, since you can pull
+methods and fields and classes into one nasty line of code.
+
+3. I did enjoy this lab, it wasn't too challenging, but it was required to be done in a way I would not have done it if left to my own devices.  The structure of the lab
+turned out to be very useful, and designing the various bots was entertaining.
+
+4. ~6, and I could have done it faster but coming up with the MyBot strategy took me some time, since I couldn't come up with a good original strategy easily.
+
+5. As mentioned in question 1, about 4 years.  It is the language I have the most experience with.
